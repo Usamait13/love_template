@@ -29,7 +29,7 @@ export default function LoveLetterSection() {
                 transition={{ delay: 0.2 }}
                 className="first-letter:text-6xl first-letter:font-elegant first-letter:text-primary first-letter:float-left first-letter:mr-2"
               >
-                My Dearest Love,
+                My Dearest Mano,
               </motion.p>
 
               <motion.p

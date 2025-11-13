@@ -44,7 +44,7 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
-          My Love ❤️
+          Mano ❤️
         </motion.h2>
 
         <motion.div
