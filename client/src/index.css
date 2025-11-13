@@ -43,8 +43,10 @@
   --chart-3: 340 60% 40%;
   --chart-4: 15 70% 50%;
   --chart-5: 350 68% 42%;
-  --font-sans: Open Sans, sans-serif;
-  --font-serif: Georgia, serif;
+  --font-sans: Montserrat, sans-serif;
+  --font-serif: Playfair Display, serif;
+  --font-script: Dancing Script, cursive;
+  --font-elegant: Great Vibes, cursive;
   --font-mono: Menlo, monospace;
   --radius: .5rem;
   --shadow-2xs: 0px 2px 0px 0px hsl(340 15% 50% / 0.00);
@@ -168,6 +170,10 @@
 @layer base {
   * {
     @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   body {
