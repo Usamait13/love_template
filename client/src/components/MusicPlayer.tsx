@@ -14,15 +14,28 @@ export default function MusicPlayer() {
   }, []);
 
   const togglePlay = () => {
-    if (audioRef.current) {
-      if (isPlaying) {
-        audioRef.current.pause();
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    if (isPlaying) {
+      audio.pause();
+      setIsPlaying(false);
+    } else {
+      const playPromise = audio.play();
+
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            setIsPlaying(true);
+          })
+          .catch((error) => {
+            console.warn("Audio playback failed:", error);
+            setIsPlaying(false);
+          });
       } else {
-        audioRef.current.play().catch((error) => {
-          console.log("Audio playback failed:", error);
-        });
+        // fallback for browsers not returning a promise
+        setIsPlaying(true);
       }
-      setIsPlaying(!isPlaying);
     }
   };
 
@@ -54,6 +67,7 @@ export default function MusicPlayer() {
             onClick={togglePlay}
             className="w-14 h-14 sm:w-16 sm:h-16 rounded-full shadow-2xl bg-primary hover:bg-primary/90"
             data-testid="button-music-toggle"
+            style={{ pointerEvents: "auto" }}
           >
             <AnimatePresence mode="wait">
               {isPlaying ? (
@@ -80,7 +94,7 @@ export default function MusicPlayer() {
             </AnimatePresence>
           </Button>
 
-          {isPlaying && (
+          {/* {isPlaying && (
             <motion.div
               className="absolute inset-0 rounded-full"
               animate={{
@@ -95,9 +109,9 @@ export default function MusicPlayer() {
                 ease: "easeOut",
               }}
             />
-          )}
+          )} */}
 
-          {isPlaying && (
+          {/* {isPlaying && (
             <div className="absolute -inset-1">
               <motion.div
                 className="absolute inset-0 rounded-full bg-primary/20"
@@ -107,7 +121,7 @@ export default function MusicPlayer() {
                 <Music className="w-3 h-3 text-primary absolute top-1 left-1/2 -translate-x-1/2" />
               </motion.div>
             </div>
-          )}
+          )} */}
         </div>
       </motion.div>
 
