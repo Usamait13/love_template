@@ -83,15 +83,6 @@ export default function LoveLetterSection() {
           </Card>
         </motion.div>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 1.4 }}
-          className="text-center text-muted-foreground mt-8 text-sm sm:text-base italic"
-        >
-          Replace this letter with your own heartfelt message
-        </motion.p>
       </div>
     </section>
   );

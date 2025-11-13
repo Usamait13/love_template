@@ -283,16 +283,6 @@ export default function PhotoSlideshow() {
           </motion.div>
         </div>
 
-        {/* Helper text */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.6 }}
-          className="text-center text-muted-foreground mt-8 sm:mt-12 text-xs sm:text-sm max-w-2xl mx-auto italic"
-        >
-          💝 Replace these placeholder images with your favorite photos together. Update the captions in the code to add your personal touch.
-        </motion.p>
       </div>
     </section>
   );
