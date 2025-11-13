@@ -112,20 +112,13 @@ export default function MusicPlayer() {
       </motion.div>
 
       {/* 
-        TO ADD YOUR OWN MUSIC:
-        1. Place your romantic music file (MP3 format) in the 'client/public' folder
-        2. Name it 'romantic-music.mp3' OR update the src path below to match your filename
-        3. Example: If your file is 'love-song.mp3', change src to "/love-song.mp3"
-        
-        For now, using a royalty-free romantic instrumental from a public URL
+        Beautiful romantic piano instrumental by Bensound
+        To replace with your own music:
+        1. Add your MP3 file to the 'client/public' folder
+        2. Update the src path below to match your filename
       */}
       <audio ref={audioRef} loop>
-        <source 
-          src="https://cdn.pixabay.com/audio/2022/03/10/audio_4a5e87e461.mp3" 
-          type="audio/mpeg" 
-        />
-        {/* Fallback for local file: Uncomment the line below and add your file to client/public */}
-        {/* <source src="/romantic-music.mp3" type="audio/mpeg" /> */}
+        <source src="/romantic-music.mp3" type="audio/mpeg" />
       </audio>
     </>
   );
