@@ -1,6 +1,7 @@
 {
   "builds": [{ "src": "client/index.html", "use": "@vercel/static" }],
   "outputDirectory": "dist",
+  "rootDirectory": "client",
   "buildCommand": "npm run build",
   "routes": [
     { "src": "/(.*)", "dest": "/client/index.html" }
